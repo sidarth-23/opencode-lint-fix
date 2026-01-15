@@ -83,8 +83,7 @@ export const LintFixPlugin: Plugin = async ({ client, directory, $ }) => {
 								type: 'text',
 								text: JSON.stringify({
 									task: 'fix_lint_errors',
-									instruction:
-										'Fix these lint errors by editing files. Do not disable lint rules.',
+									instruction: 'Fix these lint errors by editing files. Do not disable lint rules.',
 									iteration,
 									maxIterations: config.data.maxIterations,
 									results: allResults,
