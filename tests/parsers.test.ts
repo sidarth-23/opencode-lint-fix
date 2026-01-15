@@ -60,8 +60,11 @@ test('parseEslint should handle empty output', () => {
 });
 
 test('parseEslint should handle malformed JSON', () => {
+	const originalError = console.error;
+	console.error = () => {};
 	const errors = parseEslint('invalid json', '/home/user/project');
 	expect(errors).toHaveLength(0);
+	console.error = originalError;
 });
 
 test('parseEslint should make paths relative to root', () => {
