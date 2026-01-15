@@ -1,0 +1,34 @@
+{
+	"name": "@mystic-knight/opencode-lint-fix",
+	"version": "0.1.0",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "bun build src/index.ts --outdir dist --target bun",
+		"dev": "bun run build --watch",
+		"typecheck": "tsc --noEmit",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format --write .",
+		"link:global": "ln -sf $(pwd)/dist ~/.config/opencode/plugin/opencode-lint-fix",
+		"unlink:global": "rm -f ~/.config/opencode/plugin/opencode-lint-fix"
+	},
+	"dependencies": {
+		"@opencode-ai/plugin": "latest",
+		"minimatch": "^9.0.3",
+		"zod": "^3.22.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.0",
+		"@types/bun": "latest",
+		"@types/minimatch": "^5.1.2",
+		"typescript": "^5.3.3"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

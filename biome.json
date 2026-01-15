@@ -1,0 +1,50 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 100
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"noExplicitAny": "error"
+			},
+			"nursery": {
+				"noFloatingPromises": "error"
+			},
+			"style": {
+				"noNonNullAssertion": "off"
+			},
+			"correctness": {
+				"noUnusedVariables": "off"
+			}
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["tests/**/*.ts"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noNonNullAssertion": "error"
+					}
+				}
+			}
+		}
+	],
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"trailingCommas": "all"
+		}
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	}
+}
