@@ -12,8 +12,8 @@ test('getApplicableTargets should match files against patterns', () => {
 	const result = getApplicableTargets(files, targets);
 
 	expect(result).toHaveLength(2);
-	expect(result).toContainEqual(targets[0]);
-	expect(result).toContainEqual(targets[1]);
+	expect(result[0]).toEqual(targets[0]);
+	expect(result[1]).toEqual(targets[1]);
 });
 
 test('getApplicableTargets should deduplicate targets', () => {
